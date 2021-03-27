@@ -3,3 +3,7 @@
 
 # Ignore .pyc files
 *.pyc
+
+# Ignore generated databases
+*.sql
+*.sqlite
