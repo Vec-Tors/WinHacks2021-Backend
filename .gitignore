@@ -3,7 +3,12 @@
 
 # Ignore .pyc files
 *.pyc
+__pycache__
 
 # Ignore generated databases
 *.sql
 *.sqlite
+*.json
+
+# Other
+util-test.py
