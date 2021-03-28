@@ -17,4 +17,4 @@ async def all_data(request):
         data = places_puller.main()
     return sanic.response.json(data)
 
-app.run()
+app.run(debug=True, port='3000', host='0.0.0.0')
