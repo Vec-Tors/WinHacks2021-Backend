@@ -1,6 +1,6 @@
 import urllib.parse
 import requests
-import json
+import ujson
 
 class TomTom:
     def __init__(self, api_key: str):
