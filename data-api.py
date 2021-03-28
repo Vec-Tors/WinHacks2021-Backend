@@ -3,8 +3,10 @@ from sanic import Sanic
 import ujson as json
 import datetime
 import places_puller
+from sanic_cors import CORS, cross_origin
 
 app = Sanic("WinHacks2021-Vectors-Agriculture")
+CORS(app)
 
 @app.route("/keep_alive")
 async def keep_alive(request):
@@ -17,4 +19,5 @@ async def all_data(request):
         data = places_puller.main()
     return sanic.response.json(data)
 
-app.run()
+
+app.run(debug=True, port='3000', host='0.0.0.0')
