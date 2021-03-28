@@ -55,8 +55,9 @@ def main():
         x['description'] = desc
         
         # Strip unnecessary data
-        x['address'] = x['address']['freeformAddress']
         x['municipality'] = x['address']['municipality']
+        x['address'] = x['address']['freeformAddress']
+        
 
         removable_fields = ['viewport', 'entryPoints', 'dataSources', 'info', 'id', 'dist', 'score', 'type']
         for f in removable_fields:
