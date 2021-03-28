@@ -19,11 +19,13 @@ dotenv.load_dotenv()
 NOT_FOUND = "Not found"
 
 def main():
+    print("Downloading data...")
+    
     # Initialize TomTom API
     TomTom = tt.TomTom(os.getenv("TOMTOM_API_KEY"))
 
     # Search for agricultural businesses in the area
-    data = TomTom.fuzzySearch("", countrySet="CA", lat=42.15112, lon=-82.52628, topLeft="42.48172,-83.12779", btmRight="41.94877,-81.9344", categorySet="7335,7332", limit=10000)
+    data = TomTom.fuzzySearch("", countrySet="CA", lat=42.15112, lon=-82.52628, topLeft="42.48172,-83.12779", btmRight="41.94877,-81.9344", categorySet="7335,7332004", limit=10000)
 
     # Record time
     data['summary']['timestamp'] = datetime.datetime.timestamp(datetime.datetime.now())

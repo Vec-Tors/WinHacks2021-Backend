@@ -10,6 +10,7 @@ class TomTom:
         kwargs['key'] = self.api_key
 
         r = requests.get(f"https://api.tomtom.com/search/2/search/{urllib.parse.quote(query)}.{ext}?{urllib.parse.urlencode(kwargs)}")
+        r.raise_for_status()
         return json.loads(r.content)
 
     def detailSearch(self, poi_id: str, ext: str = "json", **kwargs):
@@ -17,4 +18,5 @@ class TomTom:
         kwargs['id'] = poi_id
 
         r = requests.get(f"https://api.tomtom.com/search/2/poiDetails.{ext}?{urllib.parse.urlencode(kwargs)}")
+        r.raise_for_status()
         return json.loads(r.content)
