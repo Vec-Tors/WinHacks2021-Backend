@@ -1,3 +1,6 @@
+
+# This program has a function that will be executed once daily to update the data which gets sent to the frontend.
+
 import tomtomutil as tt
 import dotenv
 import os
